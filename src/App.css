@@ -38,3 +38,26 @@
     transform: rotate(360deg);
   }
 }
+
+table{
+  background-color: rgb(9, 165, 113);
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+tbody {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
+tr {
+  margin: 0.2rem;
+  border-radius: 30px;
+  background-color: #282c34;
+  padding: 1rem;
+  max-width: 20rem;
+  color: aliceblue;
+}

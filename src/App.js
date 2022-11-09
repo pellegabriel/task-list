@@ -11,7 +11,9 @@ function App() {
   ])
 
   function createNewTask(taskName) {
-    setTasksItems([...tasksItems, {name:taskName}])
+    if (!tasksItems.find(task => task.name === taskName)){
+      setTasksItems([...tasksItems, {name:taskName, done:false}])
+    }
   }
 
   return (
@@ -21,7 +23,7 @@ function App() {
       />
       <table>
         <thead>
-
+          <h3>Tasks</h3>
         </thead>
         <tbody>
         {
