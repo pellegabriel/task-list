@@ -1,12 +1,14 @@
 import { useState } from "react";
 
-export const TaskCreator = () => {
-    const [newTaskName, setNewTaskName] = useState()
+export const TaskCreator = (props) => {
+    console.log(props) 
+    const [newTaskName, setNewTaskName] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        localStorage.setItem('tasks', newTaskName)
-        setNewTaskName('')
+        props.createNewTask(newTaskName)
+        localStorage.setItem("tasks", newTaskName)
+        setNewTaskName("")
 }
 
     return (
@@ -14,6 +16,7 @@ export const TaskCreator = () => {
             <input
             type="text"
             placeholder='New Task...'
+            value={newTaskName}
             onChange={(e) => setNewTaskName(e.target.value)}
             />
             <button>Save Task</button>

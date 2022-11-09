@@ -10,14 +10,14 @@ function App() {
     {name: 'MyTask 3', done: false},
   ])
 
-  function createNewTask() {
-    alert("creating")
+  function createNewTask(taskName) {
+    setTasksItems([...tasksItems, {name:taskName}])
   }
 
   return (
     <div className="App">
       <TaskCreator
-        createNewTask={createNewTask}
+        createNewTask={createNewTask} 
       />
       <table>
         <thead>
@@ -26,9 +26,11 @@ function App() {
         <tbody>
         {
           tasksItems.map(task =>(
-            <div>
+            <tr key={task.name}>
+              <td>
               {task.name}
-            </div>
+              </td>
+            </tr>
           ))
         }
         </tbody>
