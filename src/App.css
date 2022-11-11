@@ -1,11 +1,11 @@
 body {
   height: 100vh;
-  background: linear-gradient(45deg, rgb(76, 0, 255), transparent),
+  background: linear-gradient(15deg, rgb(0, 0, 0), transparent),
     repeating-linear-gradient(
-      45deg,
-      rgb(183, 0, 255) 0%,
-      rgb(183, 0, 255) 5%,
-      transparent 5%,
+      100deg,
+      rgb(183, 0, 255) 2%,
+      rgb(123, 27, 161) 6%,
+      rgb(129, 109, 136) 5%,
       transparent 10%
     );
 }
@@ -14,6 +14,13 @@ body {
 }
 h3 {
   font-size: 50px;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  background-color: #282c34;
+  width: 20%;
+  padding-top: 1rem;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
 }
 .App-header {
   background-color: #282c34;
@@ -41,15 +48,22 @@ h3 {
 
 table {
   margin: 1rem;
-  padding: 1rem;
+
   display: flex;
   flex-direction: column;
+ 
+  border-radius: 30px;
+  opacity: 90%;
 }
 
 tbody {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  min-height: 700px;
+  border-radius: 40px;
 }
 tr {
   margin: 0.2rem;
@@ -58,4 +72,7 @@ tr {
   padding: 1rem;
   max-width: 20rem;
   color: aliceblue;
+}
+form {
+  padding: 2rem;
 }
