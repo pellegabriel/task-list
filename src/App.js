@@ -1,13 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-import TaskCreator from "./components/taskCreator";
+import {TaskCreator} from "./components/taskCreator";
+import {TaskTable} from "./components/taskTable";
 
 function App() {
-  const [tasksItems, setTasksItems] = useState([
-    { name: "MyTask 1", done: false },
-    { name: "MyTask 2", done: false },
-    { name: "MyTask 3", done: false },
-  ]);
+  const [tasksItems, setTasksItems] = useState([]);
 
   function createNewTask(taskName) {
     if (!tasksItems.find((task) => task.name === taskName)) {
@@ -15,21 +12,21 @@ function App() {
     }
   }
 
+  useEffect(()=>{
+    let data = localStorage.getItem('tasks')
+    if(data) {
+      setTasksItems(JSON.parse(data))
+    }
+  }, [])
+
+  useEffect(()=>{
+    localStorage.setItems('tasks', JSON.stringify(tasksItems))
+  },[tasksItems])
+
   return (
     <div className="App">
       <TaskCreator createNewTask={createNewTask} />
-      <table className="table">
-        <thead>
-          <h3>Tasks</h3>
-        </thead>
-        <tbody>
-          {tasksItems.map((task) => (
-            <tr key={task.name}>
-              <td>{task.name}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <TaskTable tasks={tasksItems}/>
     </div>
   );
 }
