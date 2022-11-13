@@ -7,7 +7,6 @@ export const TaskCreator = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         props.createNewTask(newTaskName)
-        localStorage.setItem("tasks", newTaskName)
         setNewTaskName("")
 }
 

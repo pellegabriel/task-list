@@ -1,27 +1,18 @@
 body {
   height: 100vh;
-  background: linear-gradient(15deg, rgb(0, 0, 0), transparent),
+  background: linear-gradient(0deg, rgb(0, 0, 0), transparent),
     repeating-linear-gradient(
-      100deg,
-      rgb(183, 0, 255) 2%,
-      rgb(123, 27, 161) 6%,
-      rgb(129, 109, 136) 5%,
+      180deg,
+      rgb(0, 0, 0) 2%,
+      rgb(0, 0, 0) 6%,
+      rgb(83, 78, 85) 5%,
       transparent 10%
     );
 }
 .App {
   text-align: center;
 }
-h3 {
-  font-size: 50px;
-  margin: 0;
-  color: rgb(255, 255, 255);
-  background-color: #282c34;
-  width: 20%;
-  padding-top: 1rem;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -38,4 +29,37 @@ h3 {
 }
 form {
   padding: 2rem;
+}
+.table {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  border-radius: 30px;
+}
+
+tbody {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(29, 28, 28);
+  padding: 1rem;
+  border-radius: 40px;
+}
+tr {
+  margin: 0.2rem;
+  border-radius: 30px;
+  background-color: #282c34;
+  padding: 1rem;
+  color: aliceblue;
+}
+h3 {
+  font-size: 50px;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  background-color: #282c34;
+  width: 20%;
+  padding-top: 1rem;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
 }
