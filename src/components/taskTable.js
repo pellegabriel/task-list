@@ -1,3 +1,5 @@
+import { TaskRow } from "./taskRow"
+
 export const TaskTable = ({tasks}) => {
     return (
         <table className="table">
@@ -8,15 +10,7 @@ export const TaskTable = ({tasks}) => {
         </thead>
         <tbody>
           {tasks.map((task) => (
-            <tr key={task.name}>
-              <td>
-                {task.name}
-                <input type="checkbox"
-                    checked={task.done}
-                    onChange={()=> alert('cambio')}
-                />
-              </td>
-            </tr>
+            <TaskRow task={task} key={task.name}/>
           ))
           }
         </tbody>
