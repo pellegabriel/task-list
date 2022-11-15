@@ -12,14 +12,16 @@ function App() {
   ]);
 
   function createNewTask(taskName) {
-    if (!tasksItems.find((task) => task.name == taskName)) {
+    if (!tasksItems.find((task) => task.name === taskName)) {
       setTasksItems([...tasksItems, { name: taskName, done: false }]);
     }
   }
 
   const toggleTask = (task) => {
     setTasksItems(
-      tasksItems.map((t) => (t.name == task.name ? { ...t, done: !t.done } : t))
+      tasksItems.map((t) =>
+        t.name === task.name ? { ...t, done: !t.done } : t
+      )
     );
   };
 

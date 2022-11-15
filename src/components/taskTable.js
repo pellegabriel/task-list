@@ -1,6 +1,6 @@
 import { TaskRow } from "./taskRow";
 
-export const TaskTable = ({ tasks, toggleTask }) => {
+export const TaskTable = ({ tasks, toggleTask }: ITaskTable) => {
   const taskTableRows = () => {
     return tasks.map((task) => (
       <TaskRow task={task} key={task.name} toggleTask={toggleTask} />
