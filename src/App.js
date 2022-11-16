@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { TaskCreator } from "./components/taskCreator";
 import { TaskTable } from "./components/taskTable";
 import { VisibilityControl } from "./components/visibilityControl";
-
+import {Container} from "./components/container"
 
 function App() {
   const [tasksItems, setTasksItems] = useState([]);
@@ -38,7 +38,7 @@ function App() {
 
   return (
     <main className="bg-dark vh-100 text-white">
-      <div className="container p-4 col-md4 offset-md-4">
+      <Container>
         <TaskCreator createNewTask={createNewTask} />
         <TaskTable tasks={tasksItems} toggleTask={toggleTask} />
         <VisibilityControl
@@ -53,7 +53,7 @@ function App() {
               showCompleted={showCompleted}
             />
           )}
-      </div>
+      </Container>
     </main>
   );
 }
