@@ -1,4 +1,9 @@
-export const TaskRow = ({ task, toggleTask }) => {
+interface ITaskRow {
+  tasks: { name: string };
+  toggleTask: () => string;
+}
+
+export const TaskRow = ({ task, toggleTask }: ITaskRow) => {
   return (
     <tr>
       <td className="d-flex justify-content-between">
