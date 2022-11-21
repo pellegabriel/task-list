@@ -14,14 +14,14 @@ export const TaskTable = ({ tasks, toggleTask, showCompleted = false }) => {
   }
 
   return (
-    <table className="table table-dark table-striped table-bordered border-secondary">
+    <table className="table text-white ">
       <thead>
         <tr className="table-primary">
           <th>Tasks</th>
         </tr>
       </thead>
       <div>
-      <tbody>
+      <tbody >
         {
         taskTableRows(showCompleted)
         }
